@@ -1,5 +1,8 @@
 # inspect-property
 
+[![Build Status](https://api.travis-ci.org/DiegoZoracKy/inspect-property.svg)](https://travis-ci.org/DiegoZoracKy/inspect-property)
+
+
 Inspects a Property and returns useful informations about it (e.g. nested properties, function inspection, property descriptor, value, type, constructor)
 
 ## Installation
