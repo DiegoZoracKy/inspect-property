@@ -13,7 +13,7 @@ npm install inspect-property
 
 ## Usage
 ```javascript
-inspectProperty(o, propertyName, {delimiter = '.',inspectFunction=true,inspectProperties=true,enumerability,inherited}={});
+inspectProperty(o, propertyName, { delimiter = '.', inspectFunction = true, inspectProperties = true, enumerability, inherited} = {} );
 ```
  **o**:
  Object || Property || Value to be inspected.
