@@ -1,7 +1,6 @@
 # inspect-property
 
-[![Build Status](https://api.travis-ci.org/DiegoZoracKy/inspect-property.svg)](https://travis-ci.org/DiegoZoracKy/inspect-property)
-
+[![Build Status](https://api.travis-ci.org/DiegoZoracKy/inspect-property.svg)](https://travis-ci.org/DiegoZoracKy/inspect-property) [![npm](https://img.shields.io/npm/v/inspect-property.svg)]() [![npm](https://img.shields.io/npm/l/inspect-property.svg)]()
 
 Inspects a Property and returns useful informations about it (e.g. nested properties, function inspection, property descriptor, value, type, constructor)
 
@@ -67,8 +66,11 @@ const data = {
 
 const result = inspectProperty(data);
 
-// RESULT
+////////////
+// RESULT //
+////////////
 // Below is a JSON.stringify(result), so functions references are ommitted
+
 {
     "value": {
         "a": {
@@ -95,6 +97,14 @@ const result = inspectProperty(data);
             "type": "object",
             "constructor": {
                 "name": "Object"
+            },
+            "properties": {
+                "b": {},
+                "d": 3,
+                "f": {
+                    "g": "h"
+                },
+                "f.g": "h"
             }
         },
         "a.b": {
@@ -102,7 +112,8 @@ const result = inspectProperty(data);
             "type": "object",
             "constructor": {
                 "name": "Object"
-            }
+            },
+            "properties": {}
         },
         "a.b.c": {
             "type": "function",
@@ -111,25 +122,24 @@ const result = inspectProperty(data);
             },
             "functionInspection": {
                 "name": "c",
-                "parameters": {
-                    "expected": [
-                        "z",
-                        "k"
-                    ],
-                    "defaultValues": {
-                        "z": "'DefaultX'"
+                "signature": "c(z = 'DefaultX', k);",
+                "parameters": [
+                    {
+                        "parameter": "z",
+                        "defaultValue": "DefaultX",
+                        "declaration": "z = 'DefaultX'"
                     },
-                    "names": [
-                        "z",
-                        "k"
-                    ],
-                    "definitions": [
-                        "z='DefaultX'",
-                        "k"
-                    ]
-                },
-                "signature": "c(z = 'DefaultX', k);"
-            }
+                    {
+                        "parameter": "k",
+                        "declaration": "k"
+                    }
+                ],
+                "parametersNames": [
+                    "z",
+                    "k"
+                ]
+            },
+            "properties": {}
         },
         "a.d": {
             "value": 3,
@@ -145,6 +155,9 @@ const result = inspectProperty(data);
             "type": "object",
             "constructor": {
                 "name": "Object"
+            },
+            "properties": {
+                "g": "h"
             }
         },
         "a.f.g": {

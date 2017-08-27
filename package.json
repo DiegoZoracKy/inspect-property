@@ -1,6 +1,6 @@
 {
   "name": "inspect-property",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Inspects a Property and returns useful informations about it (e.g. nested properties, function inspection, property descriptor, value, type, constructor)",
   "main": "lib/inspect-property.js",
   "author": {
@@ -27,6 +27,6 @@
   "dependencies": {
     "for-each-property": "0.0.4",
     "for-each-property-deep": "0.0.3",
-    "inspect-function": "^0.2.2"
+    "inspect-function": "^0.3.1"
   }
 }
